@@ -12,21 +12,11 @@ function App() {
     const state = "e7199af2c091e7672917c390e3faa709bbc88b81";
     const nonce = await sha1("nonce secret");
 
-    const options = {
-      headers: new Headers({
-        "content-type": "application/json",
-        baggage:
-          "request_context=CiIKIGRmMzg4ZGZiNzgwZjE1NjMwYmQzM2I5MjUyZWJlNTYxEkMSCjEzNTc5MjQ2ODAaBQjbv9o5IAEoZjAAOgoKCHRlc3RVc2VyQhoKGDVkNzQ5OTViYzU0NjUzMDAxNDQ2YzA5MUgA",
-        traceparent: "00-df388dfb780f15630bd33b9252ebe561-f260d70ccadf84d0-01",
-      }),
-      mode: "no-cors",
-    };
-
     const data = await fetch(
-      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`,
-      options
+      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`
     );
     console.log(data);
+    window.location.href = data.redirect;
   };
 
   return (
