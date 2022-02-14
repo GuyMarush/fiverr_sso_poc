@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": " ",
+  "homepage": "https://guymarush.github.io/fiverr_sso_poc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
