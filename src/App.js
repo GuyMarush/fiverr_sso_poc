@@ -1,11 +1,10 @@
 import "./App.css";
 import Button from "@mui/material/Button";
-import axios from "axios";
 import { sha1 } from "crypto-hash";
 
 function App() {
   const clientId = "kbyuFDidLLm280LIwVFiazOqjO3ty8KH";
-  const redirectUrl = "http://6dca-46-117-240-58.ngrok.io/callback";
+  const redirectUrl = "https://guymarush.github.io/fiverr_sso_poc/callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
 
@@ -24,9 +23,10 @@ function App() {
     };
 
     const data = await fetch(
-      `http://localhost:8105/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`,
+      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`,
       options
     );
+    console.log(data);
   };
 
   return (
