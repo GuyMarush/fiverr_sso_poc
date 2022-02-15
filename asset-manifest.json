@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fiverr_sso_poc/static/css/main.073c9b0a.css",
-    "main.js": "/fiverr_sso_poc/static/js/main.0e009781.js",
+    "main.css": "/fiverr_sso_poc/static/css/main.e4691d4f.css",
+    "main.js": "/fiverr_sso_poc/static/js/main.195863c8.js",
     "static/js/787.28cb0dcd.chunk.js": "/fiverr_sso_poc/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/fiverr_sso_poc/index.html",
-    "main.073c9b0a.css.map": "/fiverr_sso_poc/static/css/main.073c9b0a.css.map",
-    "main.0e009781.js.map": "/fiverr_sso_poc/static/js/main.0e009781.js.map",
+    "main.e4691d4f.css.map": "/fiverr_sso_poc/static/css/main.e4691d4f.css.map",
+    "main.195863c8.js.map": "/fiverr_sso_poc/static/js/main.195863c8.js.map",
     "787.28cb0dcd.chunk.js.map": "/fiverr_sso_poc/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.0e009781.js"
+    "static/css/main.e4691d4f.css",
+    "static/js/main.195863c8.js"
   ]
 }
