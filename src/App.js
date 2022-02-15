@@ -13,8 +13,10 @@ function App() {
     const nonce = await sha1("nonce secret");
 
     const data = await fetch(
-      `https://thingproxy.freeboard.io/fetch/https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`
+      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`
     );
+
+    window.location.href = data.url;
   };
 
   return (
