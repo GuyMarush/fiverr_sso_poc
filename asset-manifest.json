@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/fiverr_sso_poc/static/css/main.e4691d4f.css",
-    "main.js": "/fiverr_sso_poc/static/js/main.195863c8.js",
+    "main.js": "/fiverr_sso_poc/static/js/main.5c9fc770.js",
     "static/js/787.28cb0dcd.chunk.js": "/fiverr_sso_poc/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/fiverr_sso_poc/index.html",
     "main.e4691d4f.css.map": "/fiverr_sso_poc/static/css/main.e4691d4f.css.map",
-    "main.195863c8.js.map": "/fiverr_sso_poc/static/js/main.195863c8.js.map",
+    "main.5c9fc770.js.map": "/fiverr_sso_poc/static/js/main.5c9fc770.js.map",
     "787.28cb0dcd.chunk.js.map": "/fiverr_sso_poc/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e4691d4f.css",
-    "static/js/main.195863c8.js"
+    "static/js/main.5c9fc770.js"
   ]
 }
