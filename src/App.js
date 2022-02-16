@@ -31,17 +31,14 @@ function App() {
 
   return (
     <div className="App-body">
-      <Routes>
+      <Routes basename={process.env.PUBLIC_URL}>
+        <Route path="/callback" element={<Callback state={state} />} />
         <Route
-          path="/fiverr_sso_poc/callback"
-          element={<Callback state={state} />}
-        />
-        <Route
-          path="/fiverr_sso_poc"
+          path="/"
           exact
           element={
             <Button variant="contained" onClick={handleClick}>
-              Connect with Fiverr
+              Connect with Fiverr!!
             </Button>
           }
         />
