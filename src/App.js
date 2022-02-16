@@ -7,7 +7,7 @@ import Callback from "./Callback";
 import Cookies from "universal-cookie";
 
 function App() {
-  const clientId = "kbyuFDidLLm280LIwVFiazOqjO3ty8KH";
+  const clientId = "e154112d4c3a4bd5a58d559876ddafef";
   const redirectUrl = "https://guymarush.github.io/fiverr_sso_poc/callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
@@ -33,9 +33,12 @@ function App() {
     <div className="App-body">
       <BrowserRouter>
         <Routes>
-          <Route path="/callback" element={<Callback state={state} />} />
           <Route
-            path="/"
+            path="/fiverr_sso_poc/callback"
+            element={<Callback state={state} />}
+          />
+          <Route
+            path="/fiverr_sso_poc"
             element={
               <Button variant="contained" onClick={handleClick}>
                 Connect with Fiverr
