@@ -28,6 +28,8 @@ const Callback = (props) => {
       body: JSON.stringify({ code: code }),
     });
   };
+
+  return "hello";
 };
 
 export default Callback;
