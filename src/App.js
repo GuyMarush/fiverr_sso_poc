@@ -8,7 +8,7 @@ import Cookies from "universal-cookie";
 
 function App() {
   const clientId = "e154112d4c3a4bd5a58d559876ddafef";
-  const redirectUrl = "https://guymarush.github.io/fiverr_sso_poc/callback";
+  const redirectUrl = "https://guyssopoc.herokuapp.com//callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
   let state = "";
@@ -31,11 +31,10 @@ function App() {
 
   return (
     <div className="App-body">
-      <Routes basename={process.env.PUBLIC_URL}>
+      <Routes>
         <Route path="/callback" element={<Callback state={state} />} />
         <Route
           path="/"
-          exact
           element={
             <Button variant="contained" onClick={handleClick}>
               Connect with Fiverr!!
