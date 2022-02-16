@@ -5,6 +5,7 @@ const Callback = (props) => {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
+    const cookies = new Cookies();
     const code = searchParams.get("code");
     const state = searchParams.get("state");
 
