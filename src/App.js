@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.css";
 import Button from "@mui/material/Button";
 import { sha1 } from "crypto-hash";
@@ -11,25 +11,19 @@ function App() {
   const redirectUrl = "https://guyssopoc.herokuapp.com/callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
-  const [state, setState] = useState();
-  const [nonce, setNonce] = useState();
-
-  useEffect(() => {
-    const cookies = new Cookies();
-
-    state && cookies.set("state", state);
-    nonce && cookies.set("nonce", nonce);
-  }, [state, nonce]);
+  let state = "";
+  let nonce = "";
 
   const handleClick = async () => {
-    const stateConst = await sha1("state secret");
-    const nonceConst = await sha1("nonce secret");
+    state = await sha1("state secret");
+    nonce = await sha1("nonce secret");
 
-    setState(stateConst);
-    setNonce(nonceConst);
+    const cookies = new Cookies();
+    cookies.set("state", state);
+    cookies.set("nonce", nonce);
 
     const data = await fetch(
-      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${stateConst}&nonce=${nonceConst}`
+      `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`
     );
 
     window.location.href = data.url;
