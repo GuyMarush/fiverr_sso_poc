@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 const Callback = (props) => {
   const [searchParams] = useSearchParams();
