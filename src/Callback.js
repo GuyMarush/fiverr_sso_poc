@@ -17,8 +17,6 @@ const Callback = (props) => {
     }
 
     console.log("identical state");
-
-    const response = test;
   }, []);
 
   return searchParams.get("code");
