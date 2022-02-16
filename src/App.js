@@ -13,15 +13,13 @@ function App() {
   const responseType = "code";
   const [state, setState] = useState();
   const [nonce, setNonce] = useState();
-  const cookies = new Cookies();
 
   useEffect(() => {
-    cookies.set("state", state);
-  }, [state]);
+    const cookies = new Cookies();
 
-  useEffect(() => {
-    cookies.set("nonce", nonce);
-  }, [nonce]);
+    state && cookies.set("state", state);
+    nonce && cookies.set("nonce", nonce);
+  }, [state, nonce]);
 
   const handleClick = async () => {
     const stateConst = await sha1("state secret");
