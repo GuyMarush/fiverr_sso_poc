@@ -12,14 +12,20 @@ const Callback = (props) => {
 
     if (cookies.get("state") !== state) {
       //stop here, state values are not identical
-      console.log("not identical state");
       return;
     }
 
-    console.log("identical state");
-  }, []);
+    const data = await fetch("https://shrouded-shore-46750.herokuapp.com/user_info", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ code: code}),
+    });
 
-  return searchParams.get("code");
+    console.log(data)
+  }, []);
 };
 
 export default Callback;

@@ -37,7 +37,7 @@ function App() {
           path="/"
           element={
             <Button variant="contained" onClick={handleClick}>
-              Connect with Fiverr!!
+              Connect with Fiverr
             </Button>
           }
         />
