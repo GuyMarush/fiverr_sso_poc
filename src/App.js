@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Button from "@mui/material/Button";
 import { sha1 } from "crypto-hash";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Callback from "./Callback";
 import Cookies from "universal-cookie";
 
@@ -31,22 +31,21 @@ function App() {
 
   return (
     <div className="App-body">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/fiverr_sso_poc/callback"
-            element={<Callback state={state} />}
-          />
-          <Route
-            path="/fiverr_sso_poc"
-            element={
-              <Button variant="contained" onClick={handleClick}>
-                Connect with Fiverr
-              </Button>
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route
+          path="/fiverr_sso_poc/callback"
+          element={<Callback state={state} />}
+        />
+        <Route
+          path="/fiverr_sso_poc"
+          exact
+          element={
+            <Button variant="contained" onClick={handleClick}>
+              Connect with Fiverr
+            </Button>
+          }
+        />
+      </Routes>
     </div>
   );
 }
