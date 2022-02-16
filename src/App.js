@@ -8,7 +8,7 @@ import Cookies from "universal-cookie";
 
 function App() {
   const clientId = "e154112d4c3a4bd5a58d559876ddafef";
-  const redirectUrl = "https://guyssopoc.herokuapp.com//callback";
+  const redirectUrl = "https://guyssopoc.herokuapp.com/callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
   let state = "";
