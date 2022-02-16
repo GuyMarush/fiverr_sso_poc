@@ -11,17 +11,24 @@ function App() {
   const redirectUrl = "https://guyssopoc.herokuapp.com/callback";
   const scope = "openid%20profile%20email";
   const responseType = "code";
-  let state = "";
-  let nonce = "";
+  const [state, setState] = useState(initialState);
+  const [nonce, setNonce] = useState(initialState);
+  const cookies = new Cookies();
+
+  useEffect(() => {
+    setState(await sha1("state secret"));
+    setNonce(await sha1("nonce secret"));
+  }, []);
+
+  useEffect(() => {
+    cookies.set("state", state);
+  }, [state]);
+
+  useEffect(() => {
+    cookies.set("nonce", nonce);
+  }, [nonce]);
 
   const handleClick = async () => {
-    state = await sha1("state secret");
-    nonce = await sha1("nonce secret");
-
-    const cookies = new Cookies();
-    cookies.set("state", state);
-    cookies.set("nonce", nonce);
-
     const data = await fetch(
       `https://accounts.dev.fiverr.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope}&response_type=${responseType}&state=${state}&nonce=${nonce}`
     );

@@ -8,7 +8,7 @@ const Callback = (props) => {
     const code = searchParams.get("code");
     const state = searchParams.get("state");
 
-    if (props.state !== state) {
+    if (props.state != state) {
       //stop here, state values are not identical
       console.log("not identical state");
       return;
